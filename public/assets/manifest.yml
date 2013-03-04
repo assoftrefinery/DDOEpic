@@ -22,6 +22,7 @@ imagenes/note_search.png: imagenes/note_search-74dc4cff8ed62a47afa7d27105588bbf.
 imagenes/user_info.png: imagenes/user_info-b76b9e4fda874f9f6d30612d6993e361.png
 imagenes/zoom.png: imagenes/zoom-e2defc133c6e5b7aede82a336155f410.png
 application.js: application-cc35672d76deca733b83bd5690ea12e6.js
+jquery.js: jquery-ac99f70ec232afee99c3608ef8ab27cd.js
 application.css: application-09c3a63abad8b1c0b92112b15278fc85.css
 img/background.png: img/background-71be7bc91f6f68db21d3c2b1fbe208a3.png
 img/blue/button-left.png: img/blue/button-left-c18f87e6f99fc285e86218d01aa0c2f1.png
@@ -76,4 +77,6 @@ img/twitter2.png: img/twitter2-de638559165e3ac70c537e84f60fa3ae.png
 img/yellow/button-left.png: img/yellow/button-left-149427bf23ea36345ddfa271cf75f0ca.png
 img/yellow/button-right.png: img/yellow/button-right-d5d83b40fd48a8f6b6f067d4560d9604.png
 img/yellow/logo.png: img/yellow/logo-53a246553ca4528da5a7e81a9e96f8f6.png
+main.css: main-b706379d47616f23fde102d653ae7710.css
+reset.css: reset-e0ba2bd4bd7d2a041abb1af670a22f9a.css
 jquery.min.map: jquery.min-0633f0a59e3d0cd55ac3518f228b2893.map

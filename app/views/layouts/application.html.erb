@@ -4,9 +4,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "DDO Epic Items" %></title>
     <%= stylesheet_link_tag "main" %>
 
-    <% if false %>
-        <%= javascript_include_tag :defaults %>
-    <% end %>
+
 
     <%= javascript_include_tag 'jquery', 'application' %>
     <%= csrf_meta_tag %>
