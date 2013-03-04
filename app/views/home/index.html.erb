@@ -1,0 +1,53 @@
+<h1 align="center">DDO EPIC</h1>
+<h2 align="center">Ten el control de tus items epicos</h2>
+
+
+<p align="center">
+<%= image_tag("imagenes/Beholder.jpg", :align => "center") %>
+</p>
+
+<br>
+
+<% if logged_in? %>
+
+
+    <table class="tablaSHOW" align="center">
+      <tbody>
+      <tr>
+        <td align="center">
+
+          Bienvenid@ <%= current_user.username %>! ¿No eres tu?
+          <%= link_to "Salir", logout_path %>
+
+        </td>
+        <td align="center">
+
+          <%= link_to "Mis items", items_path %>
+
+        </td>
+      </tr>
+      </tbody>
+    </table>
+<% end %>
+
+<% if not logged_in? %>
+
+    <table class="tablaSHOW" align="center">
+      <tbody>
+      <tr>
+        <td align="center">
+          <p align="center">¿Ya tienes cuenta? <%= link_to "Entra", login_path %>.</p>
+        </td>
+        <td align="center">
+          <p align="center">¿Todavia no tienes cuenta? <%= link_to "¡Crea una ahora!", signup_path %></p>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+<% end %>
+
+
+
+
+

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  base: false
+  seal: false
+  shard: false
+  scroll: false
+  user: 
+
+two:
+  nombre: MyString
+  base: false
+  seal: false
+  shard: false
+  scroll: false
+  user: 

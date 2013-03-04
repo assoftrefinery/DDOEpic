@@ -1,0 +1,167 @@
+
+<h1>Selecciona un pack para ver tus items</h1>
+<br>
+<div align="center">
+<table class="tablaPACKS">
+  <tbody>
+  <tr>
+    <td>
+        <%= image_tag("adpckimg/Adpack_chrono.jpg") %> <br>
+        <%= link_to 'Items de The Chronoscope', show_chrono_path %>
+    </td>
+    <td>
+      <%= image_tag("adpckimg/Adpack_Carnival.jpg") %> <br>
+      <%= link_to 'Items de Phiarlan Carnival', show_carnival_path %>
+    </td>
+    <td>
+      <%= image_tag("adpckimg/Adpack_sands.jpg") %> <br>
+      <%= link_to 'Items de Sands of Menechtarum', show_sands_path %><br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= image_tag("adpckimg/Adpack_Sentinels.jpg") %> <br>
+      <%= link_to 'Items de Sentinels of Stormreach', show_sentinels_path %> <br>
+    </td>
+    <td>
+      <%= image_tag("adpckimg/Adpack_RedFens.jpg") %> <br>
+      <%= link_to 'Items de The Red Fens', show_redfens_path %>  <br>
+    </td>
+    <td>
+      <%= image_tag("adpckimg/Adpack_von.jpg") %> <br>
+      <%= link_to 'Items de Vault of Night', show_von_path %> <br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+
+    </td>
+    <td>
+      <%= image_tag("adpckimg/Adpack_Web.jpg") %> <br>
+      <%= link_to 'Items de Web of Chaos', show_web_path %> <br>
+    </td>
+    <td>
+      <%= image_tag("adpckimg/Adpack_CannithChallenges.jpg") %> <br>
+      <%= link_to 'Items completos', showcompletos_path %> <br>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+
+<br>
+
+<h1>Todos tus Items</h1>
+
+<br>
+
+
+<% if @items.count == 0  %>
+   <p> Aun no tienes items epicos</p>
+<% else %>
+
+<table class="tablaSHOW">
+  <tr>
+    <th>Nombre</th>
+    <th>Base</th>
+    <th>Seal</th>
+    <th>Shard</th>
+    <th>Scroll</th>
+    <th>Pack</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @items.each do |item| %>
+
+
+              <tr>
+
+                <td><%= item.nombre %></td>
+
+                <% if item.base == true %>
+
+                    <td>
+                      <div class="roundedOne">
+                        <%= check_box_tag(item, value = "1", checked = true, options = {:disabled => true}) %>
+                        <label for="roundedOne"></label>
+                      </div>
+                    </td>
+                <% else %>
+                    <td>
+                      <div class="roundedOne">
+                        <%= check_box_tag(item, value = "0", checked = false, options = {:disabled => true}) %>
+                        <label for="roundedOne"></label>
+                      </div>
+                    </td>
+                <% end %>
+
+                <% if item.seal == true %>
+                    <td>
+                      <div class="roundedOne">
+                        <%= check_box_tag(item, value = "1", checked = true, options = {:disabled => true}) %>
+                        <label for="roundedOne"></label>
+                      </div>
+                    </td>
+                <% else %>
+                    <td>
+                      <div class="roundedOne">
+                        <%= check_box_tag(item, value = "0", checked = false, options = {:disabled => true}) %>
+                        <label for="roundedOne"></label>
+                      </div>
+                    </td>
+                <% end %>
+
+                <% if item.shard == true %>
+                    <td>
+                      <div class="roundedOne">
+                        <%= check_box_tag(item, value = "1", checked = true, options = {:disabled => true}) %>
+                        <label for="roundedOne"></label>
+                      </div>
+                    </td>
+                <% else %>
+                    <td>
+                      <div class="roundedOne">
+                        <%= check_box_tag(item, value = "0", checked = false, options = {:disabled => true}) %>
+                        <label for="roundedOne"></label>
+                      </div>
+                    </td>
+                <% end %>
+
+                <% if item.scroll == true %>
+                    <td>
+                      <div class="roundedOne">
+                        <%= check_box_tag(item, value = "1", checked = true, options = {:disabled => true}) %>
+                        <label for="roundedOne"></label>
+                      </div>
+                    </td>
+                <% else %>
+                    <td>
+                      <div class="roundedOne">
+                        <%= check_box_tag(item, value = "0", checked = false, options = {:disabled => true}) %>
+                        <label for="roundedOne"></label>
+                      </div>
+                    </td>
+                <% end %>
+
+                <td>
+                  <%= Location.find(item.location_id).nombre %>
+                </td>
+
+                <td><%= link_to image_tag('imagenes/zoom.png') + " Ver", item %></td>
+                <td><%= link_to image_tag('imagenes/note_edit.png') + " Editar", edit_item_path(item) %></td>
+                <td><%= link_to image_tag('imagenes/bullet_deny.png') + " Borrar", item, method: :delete, data: { confirm: 'Eliminar. Estas seguro?' } %></td>
+
+              </tr>
+
+<% end %>
+</table>
+<% end %>
+
+<br />
+
+<%= link_to image_tag('imagenes/note_add.png') + " Añadir nuevo Item", new_item_path %> |
+<%= link_to image_tag('imagenes/arrow_down.png') + " Volver a la portada", home_index_path %>
+

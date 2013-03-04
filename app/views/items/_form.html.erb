@@ -1,0 +1,71 @@
+
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> algo ha impedido que se guardara el item:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <table class="tablaSHOW">
+      <tbody>
+      <tr>
+        <td><div class="field">
+          <%= f.label "Pack"%><br />
+          <%= f.collection_select :location_id, Location.all, :id, :nombre, :prompt => 'Selecciona un pack' %>
+        </div></td>
+        <td><div class="field">
+          <%= f.label "Item" %><br />
+          <%= f.collection_select :itemname_id, Itemname.all, :id, :nombre, :prompt => 'Selecciona un Item' %>
+        </div></td>
+        <td>
+          <div class="field">
+
+            <%= f.label :base %><br />
+             <div class="roundedOne">
+
+                <%= f.check_box :base, :label => "roundedOne" %>
+                <label for="roundedOne">
+
+                </label>
+           </div>
+         </div>
+        </td>
+
+        <td><div class="field">
+          <%= f.label :seal %><br />
+          <div class="roundedOne">
+            <%= f.check_box :seal %>
+            <label for="roundedOne"></label>
+          </div>
+        </div></td>
+        <td><div class="field">
+          <%= f.label :shard %><br />
+          <div class="roundedOne">
+            <%= f.check_box :shard %>
+            <label for="roundedOne"></label>
+          </div>
+        </div></td>
+        <td><div class="field">
+          <%= f.label :scroll %><br />
+          <div class="roundedOne">
+            <%= f.check_box :scroll %>
+            <label for="roundedOne"></label>
+          </div>
+        </div></td>
+        <td><div class="actions">
+
+          <%= f.submit " Añadir ", :class => "boton_form" %>
+
+        </div></td>
+      </tr>
+      </tbody>
+    </table>
+
+
+<% end %>

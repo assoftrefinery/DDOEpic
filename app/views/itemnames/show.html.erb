@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @itemname.nombre %>
+</p>
+<p>
+  <b>Pack:</b>
+  <%= Location.find(@itemname.location_id).nombre %>
+</p>
+
+
+<%= link_to 'Edit', edit_itemname_path(@itemname) %> |
+<%= link_to 'Nuevo objeto epico', new_itemname_path %>
+<%= link_to 'Back', itemnames_path %>

@@ -1,0 +1,30 @@
+<%= form_for(@itemname) do |f| %>
+  <% if @itemname.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@itemname.errors.count, "error") %> prohibited this itemname from being saved:</h2>
+
+      <ul>
+      <% @itemname.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <p>
+      <%= f.label :location %><br />
+      <%= f.collection_select :location_id, @locations, :id, :nombre, :prompt => "Selecciona un pack" %>
+    </p>
+    <%  @itemname.location_id = :location_id %>
+
+
+
+
+    <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

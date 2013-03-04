@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "DDO Epic Items" %></title>
+    <%= stylesheet_link_tag "main" %>
+
+    <% if false %>
+        <%= javascript_include_tag :defaults %>
+    <% end %>
+
+    <%= javascript_include_tag 'jquery', 'application' %>
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+	<link rel="shortcut icon" href="imagenes/Beholder_favicon.png" type="image/png" />
+
+    <div id="header"> <a id="logo">DDO Epic</a>
+      <hr>
+      <nav>
+        <ul>
+          <li class="active"><%= link_to image_tag('imagenes/arrow_down.png') + " Volver a la portada", home_index_path %></li>
+          <li class="active"><%= link_to image_tag('imagenes/user_info.png') + " Acerca de", acercade_path %></li>
+          <li class="active"><%= link_to image_tag('imagenes/email_forward.png') + " Contacto"%> <A HREF="mailto:direccion@correo.com"></a></li>
+        </ul>
+      </nav>
+      <hr>
+      <p id="icons"> <a href="#" class="facebook">Facebook</a> <a href="#" class="twitter">Twitter</a> <a href="#" class="rss">RSS</a> </p>
+    </div>
+  </head>
+
+
+
+        <body>
+
+              <div id="wrap">
+                <div id="container">
+                  <% flash.each do |name, msg| %>
+                    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+                  <% end %>
+
+                  <hr>
+
+                  <div id="subIntro">
+                    <%= content_tag :h1, yield(:title) if show_title? %>
+                    <%= yield %>
+                  </div>
+
+
+
+                  <!-- / #subIntro -->
+                </div>
+              </div>
+        </body>
+
+  <footer>
+    <div id="footer" class="clearFix">
+      <p class="floatLeft">&copy; 2013 &ndash; <a href="#">Fran Luque Crespo</a>, Todos los derechos | <a href="#" class="contact">Contacto</a> <a href="#" class="twitter">Twitter</a></p>
+    </div>
+  </footer>
+
+</html>

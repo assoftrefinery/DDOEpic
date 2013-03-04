@@ -1,0 +1,4 @@
+$('#item_itemname_id').empty();
+<% for itemname in @itemnames %>
+$('#item_itemname_id').append($("<option></option>").attr("value",<%= itemname.id %>).text('<%= itemname.nombre %>'));
+<% end %>
