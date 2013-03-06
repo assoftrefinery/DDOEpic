@@ -24,6 +24,7 @@ imagenes/zoom.png: imagenes/zoom-e2defc133c6e5b7aede82a336155f410.png
 application.js: application-cc35672d76deca733b83bd5690ea12e6.js
 jquery.js: jquery-ac99f70ec232afee99c3608ef8ab27cd.js
 application.css: application-09c3a63abad8b1c0b92112b15278fc85.css
+colour-blue.css: colour-blue-15718f732a13fd5385054e6eb57f6158.css
 img/background.png: img/background-71be7bc91f6f68db21d3c2b1fbe208a3.png
 img/blue/button-left.png: img/blue/button-left-c18f87e6f99fc285e86218d01aa0c2f1.png
 img/blue/button-right.png: img/blue/button-right-ae99c70f88d83565ac93b89501c51223.png
